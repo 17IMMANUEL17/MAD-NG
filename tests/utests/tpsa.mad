@@ -80,7 +80,44 @@ function TestConstr:testConstrDefault()
  
 end
 
+function TestConstr:testConstrParams()
+local ord  = 15
+    local nv = 2
+    local d = gtpsad(nv, ord)
+    local t = tpsa(d)
+    local ct = ctpsa(d)
+    local max_ord = ((ord+nv)*(ord+nv - 1))/2
+    assertEquals(t.mo,ord)
+    assertEquals(ct.mo,ord)
+   
 
+    --check all order equal to zeros
+    for o = 0, max_ord-1 do
+      assertEquals(t.coef[o],0)
+      assertEquals(ct.coef[o], 0 + 0i)
+    end
+
+   --same check for only one variable 
+    local ord  = 15
+    local nv = 1
+    local d = gtpsad(nv, ord)
+    local t = tpsa(d)
+    local ct = ctpsa(d)
+    local max_ord = ord
+    assertEquals(t.mo,ord)
+    assertEquals(ct.mo,ord)
+
+    --check all order equal to zeros
+    for o = 0, max_ord-1 do
+      assertEquals(t.coef[o],0)
+      assertEquals(ct.coef[o], 0 + 0i)
+    end
+
+end
+
+function TestProm testPromotion()
+
+end
 
 
 function TestIs:testTandD()
