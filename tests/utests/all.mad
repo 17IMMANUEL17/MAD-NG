@@ -23,7 +23,7 @@
 
 -- modules --------------------------------------------------------------------o
 
--- list of test suites (see src/madl_main.mad)
+--- list of test suites (see src/madl_main.mad)
 local modules = {
   'luaunitext', 'luacore', 'luagmath', --[['luaobject',]] 'intable', 'lambda',
   --[['typeid',]] 'constant', 'gfunc', 'gmath', 'gutil',
